@@ -1,0 +1,14 @@
+@import "../../styles//theme";
+
+.container {
+  padding: 48px 0;
+}
+
+.charactersListItem {
+  margin: calc(#{$spacer} * 2);
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 47%;
+  }
+}

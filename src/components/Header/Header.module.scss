@@ -1,0 +1,15 @@
+@import "../../styles//theme";
+
+.container {
+  color: $primary;
+  background-color: $white;
+  padding: 28px 0;
+}
+
+.heading {
+  font: {
+    family: "Permanent Marker";
+    size: 28px;
+  }
+  margin: 0 8px;
+}

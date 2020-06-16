@@ -1,0 +1,25 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $bodyBackground !important;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background-color: $textPrimary !important;
+  color: $primary !important;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

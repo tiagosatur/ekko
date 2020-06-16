@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
+import { Provider } from "react-redux";
+import "typeface-roboto";
+import "typeface-permanent-marker";
+
+import store from "./store";
+import { Layout } from "./components";
+import { Home } from "./pages";
+import "./styles/app.scss";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Layout>
+        <Router>
+          <Switch>
+            <Route component={Home} path="/" exact />
+          </Switch>
+        </Router>
+      </Layout>
+    </Provider>
   );
 }
-
-export default App;

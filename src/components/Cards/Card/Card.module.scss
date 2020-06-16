@@ -1,0 +1,7 @@
+@import "../../../styles/theme.scss";
+
+.card {
+  border-radius: $radiusDefault;
+  box-shadow: $shadowDefault;
+  overflow: hidden;
+}
