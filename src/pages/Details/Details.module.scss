@@ -1,0 +1,85 @@
+@import "../../styles/theme";
+
+.container {
+  padding: 48px 0;
+}
+
+.charactersListItem {
+  margin: calc(#{$spacer} * 2);
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 47%;
+  }
+}
+
+.media,
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.media {
+  min-height: 350px;
+}
+
+.name {
+  color: $primary;
+  font: {
+    family: "Permanent Marker";
+    size: 36px;
+  }
+  margin: 0 0 32px;
+}
+
+.image {
+  border-radius: $radiusDefault;
+  background: {
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+}
+
+.info {
+  text-align: end;
+  p {
+    font: {
+      size: 20px;
+      weight: 500;
+    }
+    margin-bottom: 24px;
+  }
+}
+
+.label {
+  color: $gray9e;
+  display: block;
+  font: {
+    size: 14px;
+    weight: 400;
+  }
+}
+
+.episodeHeading {
+  color: $gray9e;
+  font: {
+    family: "Permanent Marker";
+    size: 32px;
+    weight: 700;
+  }
+}
+
+.episodeList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.episodeItem {
+  margin: 8px;
+  width: 46%;
+
+  @include media($md) {
+    width: 23%;
+  }
+}

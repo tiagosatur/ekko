@@ -9,10 +9,20 @@ export default {
         url: `${ENDPOINTS.SEARCH}/?name=${term}`,
         method: "GET",
       }).then((res) => MIDDLEWARES.search(res)),
+    characterService: (id) =>
+      request({
+        url: `${ENDPOINTS.GET_ALL_CHARACTERS}/${id}`,
+        method: "GET",
+      }).then((res) => MIDDLEWARES.getCharacter(res)),
     allCharactersService: () =>
       request({
         url: ENDPOINTS.GET_ALL_CHARACTERS,
         method: "GET",
       }).then((res) => MIDDLEWARES.getAllCharacters(res)),
+    episodesByIdService: (ids) =>
+      request({
+        url: `${ENDPOINTS.GET_EPISODES}/${ids}`,
+        method: "GET",
+      }).then((res) => MIDDLEWARES.getEpisodesById(res)),
   },
 };

@@ -3,4 +3,12 @@ export default {
     PATH: "/",
     LABEL: "Home",
   },
+  CHARACTER: {
+    PATH: "/character",
+    LABEL: "Character",
+  },
+  FAVORITES: {
+    PATH: "/favorites",
+    LABEL: "Favorites",
+  },
 };

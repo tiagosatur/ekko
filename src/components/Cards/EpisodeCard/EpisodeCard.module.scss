@@ -1,0 +1,25 @@
+@import "../../../styles/theme";
+.episodeCard {
+  background-color: $cardBackground;
+  border-radius: $radiusDefault;
+
+  color: $gray9e;
+  cursor: pointer;
+  display: inline-block;
+  height: 100%;
+  min-height: 118px;
+  padding: 16px;
+  width: 100%;
+}
+
+.episodeName {
+  color: $grayf5;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.episodeCode {
+  margin-right: 16px;
+}

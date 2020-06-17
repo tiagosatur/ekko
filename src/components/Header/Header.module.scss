@@ -12,4 +12,33 @@
     size: 28px;
   }
   margin: 0 8px;
+  text-align: center;
+
+  @include media($md) {
+    text-align: left;
+  }
+}
+
+.navList {
+  justify-content: center;
+
+  @include media($md) {
+    justify-content: flex-end;
+  }
+}
+
+.link {
+  color: $gray9e !important;
+  display: inline-flex;
+  font: {
+    family: "Permanent Marker";
+    size: 16px;
+  }
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary;
+  }
 }
