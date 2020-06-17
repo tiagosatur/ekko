@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "..";
-import { Text } from "../..";
+import { Text, Status } from "../..";
 import styles from "./CharacterCard.module.scss";
 
 export default function CharacterCard({
@@ -18,20 +18,8 @@ export default function CharacterCard({
         <div className={`${styles.cardContent} dFlex flexColumn`}>
           <header className={styles.cardHeader}>
             <Text className={`${styles.characterName} whiteSmoke`}>{name}</Text>
-            <Text
-              className={`${styles.characterStatus} dFlex flexCenterY white`}
-            >
-              <span
-                className={` ${styles.statusCircle} ${
-                  status == "Alive"
-                    ? "bgGreen"
-                    : status == "Dead"
-                    ? "bgRed"
-                    : "bgWhite"
-                }`}
-              />
-              {status} - {species}
-            </Text>
+
+            <Status status={status} species={species} />
           </header>
           <div className={`whiteSmoke`}>
             <Text className={`${styles.locationLabel} `}>

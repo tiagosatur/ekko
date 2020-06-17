@@ -1,0 +1,20 @@
+@import "../../styles/theme.scss";
+
+.characterStatus {
+  font: {
+    size: 12px;
+    weight: 300;
+  }
+
+  @include media($md) {
+    font-size: calc(#{$spacer} * 4);
+  }
+}
+
+.statusCircle {
+  border-radius: $radius50;
+  display: inline-block;
+  margin-right: 8px;
+  height: 10px;
+  width: 10px;
+}

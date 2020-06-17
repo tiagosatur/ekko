@@ -21,3 +21,27 @@
 .flexGrow01 {
   flex-grow: 1;
 }
+
+.flexJustifyStart {
+  justify-content: flex-start;
+}
+
+.flexJustifyEnd {
+  justify-content: flex-end;
+}
+
+.flexJustifyCenter {
+  justify-content: center;
+}
+
+.flexAlignStart {
+  align-items: flex-start;
+}
+
+.flexAlignEnd {
+  align-items: flex-end;
+}
+
+.flexAlignCenter {
+  align-items: center;
+}

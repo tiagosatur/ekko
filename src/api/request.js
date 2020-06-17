@@ -3,7 +3,6 @@ import store from "../store";
 import ENDPOINTS from "./endpoints";
 
 const request = (store) => (config) => {
-  const token = store && store.getState().auth.token;
   axios.defaults.baseURL = ENDPOINTS.BASE;
 
   const headers = {

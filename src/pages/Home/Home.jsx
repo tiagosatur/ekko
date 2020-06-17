@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "react-flexbox-grid";
+import { Link } from "react-router-dom";
+import { isEmpty } from "lodash";
 
-import { useAction, useStore, uniqueId } from "../../utils";
-import { Text, CharacterCard, Spinner } from "../../components";
+import { useAction, useStore, uniqueId, ROUTES } from "../../utils";
+import { CharacterCard, Spinner } from "../../components";
 import styles from "./Home.module.scss";
 
 export default function Home() {
@@ -14,7 +16,7 @@ export default function Home() {
   } = useStore();
 
   useEffect(() => {
-    actions.getAllcharacters();
+    isEmpty(list) && actions.getAllcharacters();
   }, []);
 
   return (
@@ -33,7 +35,12 @@ export default function Home() {
                         key={uniqueId()}
                         className={`${styles.charactersListItem}`}
                       >
-                        <CharacterCard info={item} />
+                        <Link
+                          to={`${ROUTES.CHARACTER.PATH}/${item.id}`}
+                          className={styles.charactersListLink}
+                        >
+                          <CharacterCard info={item} />
+                        </Link>
                       </li>
                     ))}
                 </ul>

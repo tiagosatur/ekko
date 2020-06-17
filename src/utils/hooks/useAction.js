@@ -1,6 +1,10 @@
 import { useDispatch } from "react-redux";
 
-import { getAllcharacters } from "../../store/actions";
+import {
+  getAllcharacters,
+  getCharacter,
+  getEpisodesById,
+} from "../../store/actions";
 
 export default function useAction() {
   const dispatch = useDispatch();
@@ -8,6 +12,8 @@ export default function useAction() {
   return {
     actions: {
       getAllcharacters: (data) => dispatch(getAllcharacters(data)),
+      getCharacter: (data) => dispatch(getCharacter(data)),
+      getEpisodesById: (data) => dispatch(getEpisodesById(data)),
     },
   };
 }
