@@ -1,0 +1,16 @@
+@import "../../../styles/theme.scss";
+
+.characterName {
+  color: $primary;
+  font-family: "Permanent Marker";
+  font-size: 38px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.info {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}

@@ -4,8 +4,10 @@ export default {
   },
   character: {
     characterLoading: false,
+    episodesLoading: false,
     info: {},
     error: "",
+    episodes: [],
   },
   characters: {
     charactersLoading: false,
@@ -13,9 +15,9 @@ export default {
     info: {},
     error: "",
   },
-  episodes: {
-    list: [],
+  favorites: {
+    characters: [],
+    favoriteLoading: false,
     error: "",
-    episodesLoading: false,
   },
 };

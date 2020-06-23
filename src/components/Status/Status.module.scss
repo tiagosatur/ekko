@@ -1,6 +1,10 @@
 @import "../../styles/theme.scss";
 
 .characterStatus {
+  align-items: center;
+  color: $white;
+  display: flex;
+
   font: {
     size: 12px;
     weight: 300;
