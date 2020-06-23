@@ -2,24 +2,24 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import { manageLocalStorage } from "../utils";
-import { auth, character, characters, episodes, favorites } from "./reducers";
+import { manageLocalStorage, saveState } from "../utils";
+import { auth, character, characters, favorites } from "./reducers";
 
 const rootReducer = combineReducers({
   auth,
   character,
   characters,
-  // episodes,
   favorites,
 });
 
+export const loadState = (localStorageName) => {
+  const serializedState = localStorage.getItem(localStorageName);
+  return serializedState ? { favorites: JSON.parse(serializedState) } : {};
+};
+
 const localStorageName = "rickMortyState";
-
-const { saveState, loadState } = manageLocalStorage(localStorageName);
-
 const middlewares = [thunk];
-
-const persistedState = loadState();
+const persistedState = loadState(localStorageName);
 
 const store = createStore(
   rootReducer,
@@ -29,6 +29,6 @@ const store = createStore(
 
 store.subscribe(() => {
   const state = store.getState();
-  saveState(state);
+  saveState(state, localStorageName);
 });
 export default store;

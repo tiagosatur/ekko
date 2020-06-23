@@ -6,3 +6,4 @@ export { default as populateFavoriteForm } from "./populateFavoriteForm";
 
 export * from "./hooks";
 export * from "./manageLocalStorage";
+export * from "./test";
