@@ -25,7 +25,7 @@ export default function UpdateFavorite() {
 
   const { updateFavorite } = useAction();
 
-  const { register, getValues, setValue, handleSubmit, formState } = useForm();
+  const { register, getValues, setValue, handleSubmit } = useForm();
   const findFavorite = useCallback(
     (arr) => arr.find((item) => parseInt(item.id) === parseInt(id)),
     [id]
@@ -38,8 +38,6 @@ export default function UpdateFavorite() {
   }, [id, setValue, findFavorite, favoriteCharacters]);
 
   async function handleSubmitForm(values) {
-    console.log("formState", formState);
-
     await updateFavorite({
       id,
       ...values,

@@ -5,4 +5,9 @@ export default {
   home: {
     homepage: "homepage",
   },
+  favorites: {
+    new: {
+      container: "newFavoritePageContainer",
+    },
+  },
 };

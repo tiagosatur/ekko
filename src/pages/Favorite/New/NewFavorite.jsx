@@ -9,6 +9,7 @@ import {
   useStore,
   ROUTES,
   populateFavoriteForm,
+  testId,
 } from "../../../utils";
 import { FavoriteForm, Spinner } from "../../../components";
 import styles from "./NewFavorite.module.scss";
@@ -39,7 +40,10 @@ export default function NewFavorite() {
   }
 
   return (
-    <div className={styles.container} data-testid="homepage">
+    <div
+      className={styles.container}
+      data-testid={testId.favorites.new.container}
+    >
       <Row>
         <Col xs={12}>
           {characterLoading ? (
