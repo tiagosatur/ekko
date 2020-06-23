@@ -1,9 +1,9 @@
 export default {
   header: {
-    header: "header",
+    headerContainer: "headerContainer",
   },
   home: {
-    container: "homePageContainer",
+    homepage: "homepage",
   },
   favorites: {
     new: {

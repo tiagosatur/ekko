@@ -2,7 +2,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { cleanup } from "@testing-library/react";
-import { renderWithProviders as render } from "../../utils";
+import { renderWithProviders as render, testId } from "../../utils";
 
 import Home from "./Home";
 
@@ -19,6 +19,6 @@ describe("Home component", () => {
   // it("renders", () => {
   //   const { queryByTestId } = render(<Home />);
 
-  //   expect(queryByTestId("homepage").textContent).toBe(true);
+  //   expect(queryByTestId(testId.home.homepage)) ;
   // });
 });

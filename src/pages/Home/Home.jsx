@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
 import { Row, Col } from "react-flexbox-grid";
 import { Link } from "react-router-dom";
-import { isEmpty } from "lodash";
 
 import { useAction, useStore, uniqueId, testId, ROUTES } from "../../utils";
 import { CharacterCard, Spinner } from "../../components";
 import styles from "./Home.module.scss";
 
 export default function Home() {
-  const { actions } = useAction();
   const {
     state: {
       characters: { list, charactersLoading },
     },
   } = useStore();
 
+  const { getAllcharacters } = useAction();
   useEffect(() => {
-    isEmpty(list) && actions.getAllcharacters();
-  });
+    getAllcharacters();
+  }, [getAllcharacters]);
 
   return (
-    <div className={styles.container} data-testid={testId.home.container}>
+    <div className={styles.container} data-testid={testId.home.homepage}>
       <Row>
         <Col xs={12}>
           {charactersLoading ? (
