@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 export default function useStore() {
-  const { auth, character, characters, episodes } = useSelector(
+  const { auth, character, characters, favorites } = useSelector(
     (state) => state
   );
 
@@ -10,7 +10,7 @@ export default function useStore() {
       auth,
       character,
       characters,
-      episodes,
+      favorites,
     },
   };
 }

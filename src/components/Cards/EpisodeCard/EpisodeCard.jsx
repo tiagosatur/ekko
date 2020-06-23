@@ -13,7 +13,7 @@ export default function EpisodeCard({ info }) {
       rel="noopener noreferrer"
     >
       <Text className={styles.episodeName}>{info.name}</Text>
-      <div className="dFlex flexCenterX">
+      <div className={styles.cardContent}>
         <Text className={styles.episodeCode}>{info.episode}</Text>
         <Text className={styles.episodeDate}>
           {info.created && useDate.format.iso.date(info.created)}

@@ -7,8 +7,18 @@ export default {
     PATH: "/character",
     LABEL: "Character",
   },
-  FAVORITES: {
-    PATH: "/favorites",
-    LABEL: "Favorites",
+  FAVORITE: {
+    VIEW: {
+      PATH: "/favorites",
+      LABEL: "Favorites",
+    },
+    NEW: {
+      PATH: "/favorite/new",
+      LABEL: "New favorite",
+    },
+    UPDATE: {
+      PATH: "/favorite/update",
+      LABEL: "Update favorite",
+    },
   },
 };

@@ -1,4 +1,4 @@
-@import "../../styles/theme";
+@import "../../../styles/theme";
 
 .container {
   padding: 48px 0;
@@ -42,6 +42,10 @@
 }
 
 .info {
+  align-items: flex-end;
+  color: $white;
+  display: flex;
+  flex-direction: column;
   text-align: end;
   p {
     font: {
@@ -70,16 +74,20 @@
   }
 }
 
-.episodeList {
+.episodes {
   display: flex;
   flex-wrap: wrap;
 }
 
 .episodeItem {
   margin: 8px;
-  width: 46%;
+  width: 44%;
 
   @include media($md) {
-    width: 23%;
+    width: 22%;
   }
+}
+
+.actionButtons {
+  display: flex;
 }

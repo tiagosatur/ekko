@@ -36,4 +36,52 @@ export default {
     type: TYPES.GET_EPISODES_FAIL,
     payload: error,
   }),
+
+  [TYPES.GET_ALL_FAVORITES_PENDING]: () => ({
+    type: TYPES.GET_ALL_FAVORITES_PENDING,
+  }),
+  [TYPES.GET_ALL_FAVORITES_SUCCESS]: (data) => ({
+    type: TYPES.GET_ALL_FAVORITES_SUCCESS,
+    payload: data,
+  }),
+  [TYPES.GET_ALL_FAVORITES_FAIL]: (error) => ({
+    type: TYPES.GET_ALL_FAVORITES_FAIL,
+    payload: error,
+  }),
+
+  [TYPES.ADD_FAVORITE_PENDING]: () => ({
+    type: TYPES.ADD_FAVORITE_PENDING,
+  }),
+  [TYPES.ADD_FAVORITE_SUCCESS]: (data) => ({
+    type: TYPES.ADD_FAVORITE_SUCCESS,
+    payload: data,
+  }),
+  [TYPES.ADD_FAVORITE_FAIL]: (error) => ({
+    type: TYPES.ADD_FAVORITE_FAIL,
+    payload: error,
+  }),
+
+  [TYPES.UPDATE_FAVORITE_PENDING]: () => ({
+    type: TYPES.UPDATE_FAVORITE_PENDING,
+  }),
+  [TYPES.UPDATE_FAVORITE_SUCCESS]: (data) => ({
+    type: TYPES.UPDATE_FAVORITE_SUCCESS,
+    payload: data,
+  }),
+  [TYPES.UPDATE_FAVORITE_FAIL]: (error) => ({
+    type: TYPES.UPDATE_FAVORITE_FAIL,
+    payload: error,
+  }),
+
+  [TYPES.DELETE_FAVORITE_PENDING]: () => ({
+    type: TYPES.DELETE_FAVORITE_PENDING,
+  }),
+  [TYPES.DELETE_FAVORITE_SUCCESS]: (data) => ({
+    type: TYPES.DELETE_FAVORITE_SUCCESS,
+    payload: data,
+  }),
+  [TYPES.DELETE_FAVORITE_FAIL]: (error) => ({
+    type: TYPES.DELETE_FAVORITE_FAIL,
+    payload: error,
+  }),
 };

@@ -4,7 +4,7 @@ import styles from "./Status.module.scss";
 
 export default function Status({ status, species }) {
   return (
-    <Text className={`${styles.characterStatus} dFlex flexCenterY white`}>
+    <Text className={`${styles.characterStatus}`}>
       <span
         className={` ${styles.statusCircle} ${
           status === "Alive"

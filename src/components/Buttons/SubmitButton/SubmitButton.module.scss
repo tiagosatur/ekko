@@ -1,0 +1,44 @@
+@import "../../../styles/theme.scss";
+
+.button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: $radiusDefault;
+  color: $grayf5;
+  cursor: pointer;
+
+  font: {
+    size: 18px;
+    weight: 600;
+  }
+  margin: 8px;
+  padding: 16px 24px;
+  transition: all 0.2s;
+  width: 100%;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  @include media($md) {
+    min-width: 200px;
+    width: auto;
+  }
+
+  &.outlined {
+    border-color: $grayf5;
+
+    &.primary {
+      border-color: $primary;
+    }
+  }
+
+  &.contained {
+    border-color: $gray3c;
+    background-color: $gray3c;
+
+    &.primary {
+      border-color: $primary;
+      background-color: $primary;
+    }
+  }
+}
