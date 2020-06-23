@@ -1,5 +1,8 @@
 export default {
-  HeroHeader: {
-    employeeFirstName: "employeeFirstName",
+  header: {
+    headerContainer: "headerContainer",
+  },
+  home: {
+    homepage: "homepage",
   },
 };

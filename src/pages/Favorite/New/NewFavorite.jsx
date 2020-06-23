@@ -14,26 +14,27 @@ import { FavoriteForm, Spinner } from "../../../components";
 import styles from "./NewFavorite.module.scss";
 
 export default function NewFavorite() {
-  let { id } = useParams();
-  const { actions } = useAction();
   const {
     state: {
       character: { info, characterLoading },
     },
   } = useStore();
+  let { id } = useParams();
+  const { getCharacter, addFavorite } = useAction();
   let history = useHistory();
+
   const { register, handleSubmit, setValue } = useForm();
 
   useEffect(() => {
-    actions.getCharacter(id);
-  }, [id]);
+    getCharacter(id);
+  }, [id, getCharacter]);
 
   useEffect(() => {
     populateFavoriteForm(info, setValue);
-  }, [info]);
+  }, [info, setValue]);
 
   async function handleSubmitForm(values) {
-    await actions.addFavorite({ ...info, ...values });
+    await addFavorite({ ...info, ...values });
     history.push(ROUTES.FAVORITE.VIEW.PATH);
   }
 

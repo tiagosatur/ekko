@@ -24,23 +24,23 @@ export default function ViewCharacter() {
   } = useStore();
   let { id } = useParams();
   let history = useHistory();
-  const { actions } = useAction();
+  const { getCharacter, getEpisodesById, deleteFavorite } = useAction();
 
   useEffect(() => {
-    actions.getCharacter(id);
+    getCharacter(id);
     const isCharacterAlreadyFavorited = !isEmpty(
       favoriteCharacters?.find((item) => item.id === parseInt(id))
     );
     setAsFavorite(isCharacterAlreadyFavorited);
-  }, [id, favoriteCharacters]);
+  }, [id, getCharacter, favoriteCharacters]);
 
   useEffect(() => {
     const joinedEpisodesId = info?.episode?.join(",");
-    joinedEpisodesId && actions.getEpisodesById(joinedEpisodesId);
-  }, [info.episode]);
+    joinedEpisodesId && getEpisodesById(joinedEpisodesId);
+  }, [info, getEpisodesById]);
 
   function handleDeleteFavorite() {
-    actions.deleteFavorite(id);
+    deleteFavorite(id);
   }
 
   return (

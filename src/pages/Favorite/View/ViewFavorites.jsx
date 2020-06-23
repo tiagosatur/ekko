@@ -13,11 +13,11 @@ export default function ViewFavorites() {
       favorites: { characters, favoriteLoading },
     },
   } = useStore();
-  const { actions } = useAction();
+  const { deleteFavorite } = useAction();
   let history = useHistory();
 
   function handleDeleteFavorite(id) {
-    actions.deleteFavorite(id);
+    deleteFavorite(id);
   }
 
   return (

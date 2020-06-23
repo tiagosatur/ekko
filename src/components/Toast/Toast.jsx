@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { AiOutlineClose, AiOutlineCheck } from "react-icons/ai";
 import styles from "./Toast.module.scss";
 
 export default function Toast({ toastList, autoClose, dismissTime }) {
   const [list, setList] = useState(toastList);
+
+  const deleteToast = useCallback(
+    (id) => {
+      const listItemIndex = list.findIndex((item) => item.id === id);
+      const toastListItem = toastList.findIndex((item) => item.id === id);
+      list.splice(listItemIndex, 1);
+      toastList.splice(toastListItem, 1);
+      setList([...list]);
+    },
+    [list, toastList]
+  );
 
   useEffect(() => {
     setList([...toastList]);
@@ -19,15 +30,7 @@ export default function Toast({ toastList, autoClose, dismissTime }) {
     return () => {
       clearInterval(interval);
     };
-  }, [toastList, autoClose, dismissTime, list]);
-
-  const deleteToast = (id) => {
-    const listItemIndex = list.findIndex((item) => item.id === id);
-    const toastListItem = toastList.findIndex((item) => item.id === id);
-    list.splice(listItemIndex, 1);
-    toastList.splice(toastListItem, 1);
-    setList([...list]);
-  };
+  }, [toastList, autoClose, dismissTime, list, deleteToast]);
 
   return (
     <>
