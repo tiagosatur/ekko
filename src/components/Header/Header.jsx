@@ -8,7 +8,10 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <div className={styles.container} data-testid={testId.header}>
+    <div
+      className={styles.container}
+      data-testid={testId.header.headerContainer}
+    >
       <Grid data-testid="layout">
         <Row>
           <Col xs={12}>
