@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Row, Col } from "react-flexbox-grid";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -26,14 +26,16 @@ export default function UpdateFavorite() {
   const { actions } = useAction();
 
   const { register, getValues, setValue, handleSubmit, formState } = useForm();
-  const findFavorite = (arr) =>
-    arr.find((item) => parseInt(item.id) === parseInt(id));
+  const findFavorite = useCallback(
+    (arr) => arr.find((item) => parseInt(item.id) === parseInt(id)),
+    [id]
+  );
 
   useEffect(() => {
     const found = findFavorite(favoriteCharacters);
     setFavoriteInfo(found);
     populateFavoriteForm(found, setValue);
-  }, [id, favoriteCharacters]);
+  }, [id, findFavorite, setValue, favoriteCharacters]);
 
   async function handleSubmitForm(values) {
     console.log("formState", formState);

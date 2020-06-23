@@ -2,7 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import { manageLocalStorage, saveState } from "../utils";
+import { saveState } from "../utils";
 import { auth, character, characters, favorites } from "./reducers";
 
 const rootReducer = combineReducers({

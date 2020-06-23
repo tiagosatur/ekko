@@ -3,7 +3,7 @@ import { Row, Col } from "react-flexbox-grid";
 import { Link } from "react-router-dom";
 import { isEmpty } from "lodash";
 
-import { useAction, useStore, uniqueId, ROUTES } from "../../utils";
+import { useAction, useStore, uniqueId, testId, ROUTES } from "../../utils";
 import { CharacterCard, Spinner } from "../../components";
 import styles from "./Home.module.scss";
 
@@ -17,10 +17,10 @@ export default function Home() {
 
   useEffect(() => {
     isEmpty(list) && actions.getAllcharacters();
-  }, []);
+  });
 
   return (
-    <div className={styles.container} data-testid="homepage">
+    <div className={styles.container} data-testid={testId.home.container}>
       <Row>
         <Col xs={12}>
           {charactersLoading ? (

@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { Grid, Row, Col } from "react-flexbox-grid";
 import { AiFillHome, AiFillStar } from "react-icons/ai";
 
-import { ROUTES } from "../../utils";
+import { ROUTES, testId } from "../../utils";
 import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <div className={styles.container} data-testid="header">
+    <div className={styles.container} data-testid={testId.header}>
       <Grid data-testid="layout">
         <Row>
           <Col xs={12}>

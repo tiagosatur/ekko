@@ -1,5 +1,13 @@
 export default {
-  HeroHeader: {
-    employeeFirstName: "employeeFirstName",
+  header: {
+    header: "header",
+  },
+  home: {
+    container: "homePageContainer",
+  },
+  favorites: {
+    new: {
+      container: "newFavoritePageContainer",
+    },
   },
 };

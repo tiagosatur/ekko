@@ -9,6 +9,7 @@ import {
   useStore,
   ROUTES,
   populateFavoriteForm,
+  testId,
 } from "../../../utils";
 import { FavoriteForm, Spinner } from "../../../components";
 import styles from "./NewFavorite.module.scss";
@@ -26,11 +27,11 @@ export default function NewFavorite() {
 
   useEffect(() => {
     actions.getCharacter(id);
-  }, [id]);
+  }, [actions, id]);
 
   useEffect(() => {
     populateFavoriteForm(info, setValue);
-  }, [info]);
+  }, [info, setValue]);
 
   async function handleSubmitForm(values) {
     await actions.addFavorite({ ...info, ...values });
@@ -38,7 +39,10 @@ export default function NewFavorite() {
   }
 
   return (
-    <div className={styles.container} data-testid="homepage">
+    <div
+      className={styles.container}
+      data-testid={testId.favorites.new.container}
+    >
       <Row>
         <Col xs={12}>
           {characterLoading ? (

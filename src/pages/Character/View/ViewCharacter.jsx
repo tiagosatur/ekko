@@ -32,12 +32,12 @@ export default function ViewCharacter() {
       favoriteCharacters?.find((item) => item.id === parseInt(id))
     );
     setAsFavorite(isCharacterAlreadyFavorited);
-  }, [id, favoriteCharacters]);
+  }, [id, favoriteCharacters, actions]);
 
   useEffect(() => {
     const joinedEpisodesId = info?.episode?.join(",");
     joinedEpisodesId && actions.getEpisodesById(joinedEpisodesId);
-  }, [info.episode]);
+  }, [info, actions]);
 
   function handleDeleteFavorite() {
     actions.deleteFavorite(id);
