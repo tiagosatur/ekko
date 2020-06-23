@@ -1,16 +1,24 @@
 # Intro
 
-List and bookmark Rick and Morty characters.
+Ekko app list and bookmark Rick and Morty characters.
 
 # Starting
 
-1. Install: `yarn install`
-2. Run: `yarn start`
-3. Test: `yarn test`
+## Install
+
+`yarn install`
+
+## Run
+
+`yarn start`
+
+## Test
+
+`yarn test`
 
 # Pipeline
 
-The app is deploye with Github actions in the heroku platform
+The app is deployed with Github actions in the Heroku service to the address [ekko-ci.herokuapp.com](https://ekko-ci.herokuapp.com/)
 
 # Stack
 
@@ -18,4 +26,8 @@ React, Redux, React router, Axios, Rreact Testing Library, Loadash, Moment and R
 
 # Api
 
-We are useing the [Rick & Morty Api](https://rickandmortyapi.com/)
+We are using the [Rick & Morty Api](https://rickandmortyapi.com/)
+
+# Contribuite
+
+Feel free to clone and pull request 
