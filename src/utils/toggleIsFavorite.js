@@ -5,7 +5,7 @@ export default function toggleIsFavorite({ characters, data }) {
 
   const newTargetFavorite = {
     ...targetFavorite,
-    isFavorite: !targetFavorite.isFavorite || false,
+    isFavorite: !targetFavorite?.isFavorite,
   };
   const updatedCharacters = characters.map((item) =>
     item.id === id ? newTargetFavorite : item

@@ -8,6 +8,7 @@ import {
   addFavorite,
   deleteFavorite,
   updateFavorite,
+  searchCharacters,
 } from "../../store/actions";
 
 export default function useAction() {
@@ -29,6 +30,9 @@ export default function useAction() {
       dispatch,
     ]),
     updateFavorite: useCallback((data) => dispatch(updateFavorite(data)), [
+      dispatch,
+    ]),
+    searchCharacters: useCallback((data) => dispatch(searchCharacters(data)), [
       dispatch,
     ]),
   };

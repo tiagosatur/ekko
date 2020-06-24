@@ -89,4 +89,16 @@ export default {
     type: TYPES.TOGGLE_FAVORITE,
     payload: data,
   }),
+
+  [TYPES.SEARCH_PENDING]: () => ({
+    type: TYPES.SEARCH_PENDING,
+  }),
+  [TYPES.SEARCH_SUCCESS]: (data) => ({
+    type: TYPES.SEARCH_SUCCESS,
+    payload: data,
+  }),
+  [TYPES.SEARCH_FAIL]: (error) => ({
+    type: TYPES.SEARCH_FAIL,
+    payload: error,
+  }),
 };

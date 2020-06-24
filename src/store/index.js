@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   favorites,
 });
 
-export const loadState = (localStorageName) => {
+const loadState = (localStorageName) => {
   const serializedState = localStorage.getItem(localStorageName);
   return serializedState ? { favorites: JSON.parse(serializedState) } : {};
 };
@@ -31,4 +31,5 @@ store.subscribe(() => {
   const state = store.getState();
   saveState(state, localStorageName);
 });
+
 export default store;

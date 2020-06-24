@@ -2,6 +2,7 @@
 
 .field {
   margin: 0 auto 22px auto;
+  position: relative;
   width: 100%;
 
   @include media($md) {
