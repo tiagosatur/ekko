@@ -3,6 +3,7 @@ export default function updateFavorite({ characters, data }) {
 
   const targetFavorite = characters.find((item) => item.id === parseInt(id));
   const otherFavorites = characters.filter((item) => item.id !== parseInt(id));
+  console.log("targetFavorite.isFavorite", targetFavorite.isFavorite);
 
   const updatedFavorite = [
     {

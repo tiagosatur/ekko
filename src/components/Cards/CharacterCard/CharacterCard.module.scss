@@ -5,6 +5,7 @@
   cursor: pointer;
   display: flex;
   height: 100%;
+  position: relative;
 
   &:hover {
     .characterName {
@@ -20,6 +21,48 @@
 
 .cardHeader {
   margin-bottom: 16px;
+}
+
+.actionButtons {
+  position: absolute;
+
+  right: 16px;
+  top: 16px;
+  z-index: 10;
+}
+
+.button {
+  background-color: transparent;
+  border: 0;
+  color: $primary;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.favoritedButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.starIcon {
+  font-size: 26px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.charactersListLink {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  z-index: 0;
 }
 
 .cardMedia {

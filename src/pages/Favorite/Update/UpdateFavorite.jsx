@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Row, Col } from "react-flexbox-grid";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import {
@@ -8,6 +8,7 @@ import {
   useStore,
   populateFavoriteForm,
   uniqueId,
+  ROUTES,
 } from "../../../utils";
 import { FavoriteForm, Spinner, Toast } from "../../../components";
 import styles from "./UpdateFavorite.module.scss";
@@ -15,6 +16,7 @@ import styles from "./UpdateFavorite.module.scss";
 export default function UpdateFavorite() {
   const [favoriteInfo, setFavoriteInfo] = useState({});
   const [toastList, setToastList] = useState([]);
+  const history = useHistory();
 
   const {
     state: {
@@ -33,9 +35,11 @@ export default function UpdateFavorite() {
 
   useEffect(() => {
     const found = findFavorite(favoriteCharacters);
+    if (!found) history.push(ROUTES.FAVORITE.VIEW.PATH);
+
     setFavoriteInfo(found);
     populateFavoriteForm(found, setValue);
-  }, [id, setValue, findFavorite, favoriteCharacters]);
+  }, [id, setValue, findFavorite, favoriteCharacters, history]);
 
   async function handleSubmitForm(values) {
     await updateFavorite({

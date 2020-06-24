@@ -1,5 +1,6 @@
 import initial from "../initial";
 import TYPES from "../types";
+import { toggleIsFavorite } from "../../utils";
 
 export default (state = initial.characters, action) => {
   switch (action.type) {
@@ -25,6 +26,14 @@ export default (state = initial.characters, action) => {
         error: action.payload,
         list: [],
         info: {},
+      };
+    case TYPES.TOGGLE_FAVORITE:
+      return {
+        ...state,
+        list: toggleIsFavorite({
+          characters: state.list,
+          data: action.payload,
+        }),
       };
     default:
       return state;

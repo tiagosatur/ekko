@@ -2,7 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import { saveState } from "../utils";
+import { saveState, reduxMiddlewares } from "../utils";
 import { auth, character, characters, favorites } from "./reducers";
 
 const rootReducer = combineReducers({
@@ -18,7 +18,7 @@ export const loadState = (localStorageName) => {
 };
 
 const localStorageName = "rickMortyState";
-const middlewares = [thunk];
+const middlewares = [thunk, reduxMiddlewares.addFavoriteMiddlewareInterceptor];
 const persistedState = loadState(localStorageName);
 
 const store = createStore(

@@ -28,6 +28,7 @@ export default (state = initial.favorites, action) => {
         characters: state.characters.concat({
           ...action.payload,
           id: parseInt(action.payload.id),
+          isFavorite: true,
         }),
       };
 

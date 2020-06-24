@@ -84,4 +84,9 @@ export default {
     type: TYPES.DELETE_FAVORITE_FAIL,
     payload: error,
   }),
+
+  [TYPES.TOGGLE_FAVORITE]: (data) => ({
+    type: TYPES.TOGGLE_FAVORITE,
+    payload: data,
+  }),
 };

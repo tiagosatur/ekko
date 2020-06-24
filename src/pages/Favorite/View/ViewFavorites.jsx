@@ -1,10 +1,8 @@
 import React from "react";
 import { Row, Col } from "react-flexbox-grid";
-import { useHistory } from "react-router-dom";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
-import { useStore, useAction, uniqueId, ROUTES } from "../../../utils";
-import { CharacterCard, IconButton, Spinner } from "../../../components";
+import { useStore, useAction, uniqueId } from "../../../utils";
+import { CharacterCard, Spinner } from "../../../components";
 import styles from "./ViewFavorites.module.scss";
 
 export default function ViewFavorites() {
@@ -13,12 +11,7 @@ export default function ViewFavorites() {
       favorites: { characters, favoriteLoading },
     },
   } = useStore();
-  const { deleteFavorite } = useAction();
-  let history = useHistory();
-
-  function handleDeleteFavorite(id) {
-    deleteFavorite(id);
-  }
+  const { deleteFavorite, addFavorite } = useAction();
 
   return (
     <div className={styles.container} data-testid="homepage">
@@ -43,30 +36,14 @@ export default function ViewFavorites() {
                         key={uniqueId()}
                         className={`${styles.charactersListItem}`}
                       >
-                        <CharacterCard info={item} className={styles.card} />
-                        <div className={styles.actionButtons}>
-                          <IconButton
-                            primary
-                            contained
-                            title={`Update favorite`}
-                            handleClick={() => {
-                              history.push(
-                                `${ROUTES.FAVORITE.UPDATE.PATH}/${item.id}`
-                              );
-                            }}
-                          >
-                            <AiFillEdit />
-                          </IconButton>
-                          <IconButton
-                            handleClick={() => handleDeleteFavorite(item.id)}
-                            primary
-                            contained
-                            title="Delete favorite"
-                          >
-                            <AiFillDelete />
-                          </IconButton>
-                        </div>
-                        <div className={styles.overlay} />
+                        <CharacterCard
+                          info={item}
+                          actions={{
+                            handleDeleteFavorite: deleteFavorite,
+                            handleAddFavorite: addFavorite,
+                          }}
+                          className={styles.card}
+                        />
                       </li>
                     ))
                   )}
