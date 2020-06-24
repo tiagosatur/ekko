@@ -1,6 +1,6 @@
 # Intro
 
-Ekko app list and bookmark Rick and Morty characters.
+Ekko app searches, list Rick and Morty characters and bookmark them in the browser.
 
 # Starting
 
