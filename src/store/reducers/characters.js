@@ -11,6 +11,7 @@ export default (state = initial.characters, action) => {
         charactersLoading: true,
         list: [],
         info: {},
+        error: "",
       };
 
     case TYPES.GET_ALL_CHARACTERS_SUCCESS:
